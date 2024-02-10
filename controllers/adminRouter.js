@@ -24,5 +24,10 @@ let result= load.save()
     })
 })
 
-
+router.get("/viewmark",async(req,res)=>{
+    let data=await markData.find()
+    .populate("userId","name rollno admsnno -_id")
+    .exec()
+    res.json(data)
+})
 module.exports=router

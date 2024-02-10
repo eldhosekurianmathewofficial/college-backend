@@ -1,0 +1,36 @@
+const mongoose=require("mongoose")
+const studSchema=mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    rollno:{
+        type:String,
+        required:true
+    },
+    admsnno:{
+        type:String,
+        required:true
+    },
+    clgname:{
+        type:String,
+        required:true
+    },
+    parentname:{
+        type:String,
+        required:true
+    },
+    mobile:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+})
+module.exports=mongoose.model("studDatas",studSchema)

@@ -11,10 +11,10 @@ router.post("/add_mark",async(req,res)=>{
     })
 
 })
-router.get("/viewmark",async(req,res)=>{
-    let data=await markData.find()
-    .populate("userId","name rollno admsnno -_id")
-    .exec()
-    res.json(data)
+router.post("/viewmymark",async(req,res)=>{
+    let data=req.body
+    let result=await markData.find(data)
+
+    res.json(result)
 })
 module.exports=router
